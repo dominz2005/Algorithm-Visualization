@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Sorting</title>
+        <script src="https://kit.fontawesome.com/e7cf736048.js" crossorigin="anonymous"></script>
+        <meta name="description" content="JS Project used for visualizing sorting algorithms to compare them and see how they work in action. You can find bubble sort, merge sort and quick sort here.">
+        <meta name="keywords" content="Sorting, algorithms, blocks, project">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="dominz2005">
+        <link rel="icon" href="img/Sorting/favicon.png">
+        <link rel="stylesheet" href="sort.css">
+    </head>
+    <body>
+        <div class="tutorial">
+            <div class="left">
+                <img src="img/Sorting/notSorted.jpg" alt="Image of not sorted blocks">
+            </div>
+            <div class="right">
+                <h2>WELCOME TO THE SORTING ALGORITHMS!</h2>
+                <h3>You will see a quick tutorial that will show you how to use this tool.</h3>
+                <p>If you want you can skip it by pressing the “Skip Tutorial” button. Otherwise, press “Next”.</p>
+                <div class="buttons">
+                    <button>SKIP TUTORIAL</button>
+                    <button>NEXT</button>
+                </div>
+            </div>
+            <p class="count">1/6</p>
+        </div>
+        <header>
+            <a href="pathfinding.html">Algorithm Visualization</a>
+            <div class="options">
+                <div class="iconFix">
+                    <i class="fas fa-cog"></i>
+                </div>
+                <form class="formClosed">
+                    <div class="slider">
+                        <label for="amount">Blocks amount</label>
+                        <input type="range" value="50" id="amount" min="50" max="200">
+                        <span class="rangeInformation">60</span>
+                    </div>
+                    <div class="customSection">
+                        <label>Sorting algorithm</label>
+                        <section>
+                            <h3>BUBBLE SORT</h3>
+                            <ul class="closed">
+                                <li>
+                                    <input type="radio" id="bubble" value="bubble" name="algorithms" checked> 
+                                    <label for="bubble">BUBBLE SORT</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="select" value="select" name="algorithms">
+                                    <label for="select">SELECT SORT</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="insertion" value="insertion" name="algorithms">
+                                    <label for="insertion">INSERTION SORT</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="bucket" value="bucket" name="algorithms">
+                                    <label for="bucket">BUCKET SORT</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="merge" value="merge" name="algorithms">
+                                    <label for="merge">MERGE SORT</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="quick" value="quick" name="algorithms">
+                                    <label for="quick">QUICK SORT</label>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="slider">
+                        <label for="speed">Time interval</label>
+                        <input type="range" value="100" id="speed" min="30" max="100">
+                        <span class="rangeInformation">60</span>
+                    </div>
+                    <input type="submit" value="SORT">
+                </form>
+            </div>
+            <div class="keys">
+                <p>- NOT SORTED BLOCK</p>
+                <p>- CURRENTLY CHECKED BLOCK</p>
+                <p>- BLOCK SAVED IN MEMORY</p>
+                <p>- CHECKED BLOCK</p>
+            </div>
+        </header>
+        <main>
+            <div class="container"></div>
+        </main>
+
+        <script src="js/Sorting/setup.js"></script>
+        <script src="js/Sorting/addatives.js"></script>
+        <script src="js/Sorting/sorting.js"></script>
+    </body>
+</html>

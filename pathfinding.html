@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Pathfinding</title>
+        <script src="https://kit.fontawesome.com/e7cf736048.js" crossorigin="anonymous"></script>
+        <meta name="description" content="JS Project used for visualizing pathfinding algorithms to compare them and see how they work in action. You can even find mazes and cellular automata in here.">
+        <meta name="keywords" content="Pathfinding, algorithms, nodes, visualization">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="dominz2005">
+        <link rel="icon" href="img/Pathfinding/favicon.png">
+        <link rel="stylesheet" href="pathfinding.css">
+    </head>
+    <body>
+        <div class="tutorial">
+            <div class="left">
+                <img src="img/Pathfinding/clearBoard.jpg" alt="Image of clear board">
+            </div>
+            <div class="right">
+                <h2>WELCOME TO THE PATHFINDING ALGORITHMS AND MORE!</h2>
+                <h3>You will see a quick tutorial that will show you how to use this tool.</h3>
+                <p>If you want you can skip it by pressing the “Skip Tutorial” button. Otherwise, press “Next”.</p>
+                <div class="tButtons">
+                    <button>SKIP TUTORIAL</button>
+                    <button>NEXT</button>
+                </div>
+            </div>
+            <p class="count">1/9</p>
+        </div>
+        <div class="cellularAutomata closedOption">
+            <div class="header">
+                <h2>Configuration</h2>
+                <p>Cellular Automata</p>
+            </div>
+            <form>
+                <label for="Bval">B:
+                    <input type="text" placeholder="VALUE" value="3" id="Bval" autocomplete="off">
+                </label>
+                <label for="Sval">S:
+                    <input type="text" placeholder="VALUE" value="1 2 3 4" id="Sval" autocomplete="off">
+                </label>
+                <input type="submit" value="START">
+            </form>
+        </div>
+        <div class="cellularAutomataMore closedOptionMore">
+            <div class="dragable">
+                <h2>Cellular Automata</h2>
+            </div>
+            <div class="body">
+                <button class="stop">STOP</button>
+                <button class="finish">END</button>
+            </div>
+        </div>
+        <header>
+            <a href="index.html">Algorithm Visualization</a>
+            <div class="options">
+                <div class="iconFix">
+                    <i class="fas fa-cog"></i>
+                </div>
+                <form class="formClosed pathForm">
+                    <div class="customSection customSectionPath">
+                        <label>Pathfinding algorithm</label>
+                        <section>
+                            <h3>A* ALGORITHM</h3>
+                            <ul class="closed">
+                                <li>
+                                    <input type="radio" id="aStar" value="aStar" name="algorithms" checked>
+                                    <label for="aStar">A* ALGORITHM</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="dijkstra" value="dijkstra" name="algorithms">
+                                    <label for="dijkstra">DIJKSTRA ALGORITHM</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="greedy" value="greedy" name="algorithms">
+                                    <label for="greedy">GREEDY BEST-FIRST SEARCH</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="breadth" value="breadth" name="algorithms">
+                                    <label for="breadth">BREADTH-FIRST SEARCH</label>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="customSection customSectionMaze">
+                        <label>Maze creation</label>
+                        <section>
+                            <h3>RANDOM MAZE</h3>
+                            <ul class="closed">
+                                <li>
+                                    <input type="radio" id="random" value="random" name="algorithmsM" checked> 
+                                    <label for="random">RANDOM MAZE</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="depthFirst" value="depthFirst" name="algorithmsM">
+                                    <label for="depthFirst">DEPTH-FIRST SEARCH MAZE</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="recursive" value="recursive" name="algorithmsM">
+                                    <label for="recursive">RECURSIVE-DIVISION MAZE</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="prims" value="prims" name="algorithmsM">
+                                    <label for="prims">PRIM'S ALGORITHM MAZE</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="tree" value="tree" name="algorithmsM">
+                                    <label for="tree">BINARY TREE MAZE</label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="cells" value="cells" name="algorithmsM">
+                                    <label for="cells">CELLULAR AUTOMATA</label>
+                                </li>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div class="buttons">
+                        <input type="button" value="CLEAR WALLS" class="clearWalls">
+                        <input type="submit" value="FIND PATH">
+                        <input type="button" value="CLEAR PATH" class="clearPath">
+                    </div>
+                    <div class="slider">
+                        <label for="speed">Time interval</label>
+                        <input type="range" value="100" id="speed" min="30" max="100">
+                        <span class="rangeInformation">60</span>
+                    </div>
+                    <input type="button" value="CREATE MAZE" class="mazeButton">
+                </form>
+            </div>
+            <div class="keys">
+                <p>- CHECKED NODE</p>
+                <p>- PATH NODE</p>
+                <label for="start" class="current"><p>- START NODE</p></label> 
+                <label for="wall"><p>- WALL NODE</p></label>
+                <label for="end"><p>- END NODE</p></label>
+                <input type="radio" value="start" id="start" name="block">
+                <input type="radio" value="wall" id="wall" name="block">
+                <input type="radio" value="end" id="end" name="block">
+            </div>
+        </header>
+        <main>
+            <table class="container" cellspacing="0"></table>
+        </main>
+
+        <script src="js/Pathfinding/setup.js"></script>
+        <script src="js/Pathfinding/mazes.js"></script>
+        <script src="js/Pathfinding/pathfinding.js"></script>
+        <script src="js/Pathfinding/addatives.js"></script>
+    </body>
+</html>

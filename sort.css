@@ -1,0 +1,499 @@
+/* FONTS */
+@font-face 
+{
+    font-family: Myriad Pro;
+    src: url(fonts/MYRIADPRO-REGULAR.OTF);
+    font-family: Myriad Pro Condensed;
+    src: url(fonts/MYRIADPRO-COND.OTF);
+}
+
+/* BODY */
+body
+{
+    margin: 0;
+    background-color: #D1D7DE;
+    font-family: Myriad Pro;
+}
+
+/* TUTORIAL WINDOW */
+.tutorialClosed
+{
+    display: none;
+}
+.tutorial
+{
+    display: grid;
+    grid-template-columns: 450px 470px;
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 7;
+    width: 920px;
+    height: 700px;
+    border: 3px solid #313335;
+    border-radius: 7px;
+    background-color: #D1D7DE;
+}
+.tutorial .left
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 4px;
+    overflow: hidden;
+    border-radius: 7px;
+}
+.tutorial .left img
+{
+    height: auto;
+    width: 450px;
+}
+.tutorial .right
+{
+    margin: auto;
+    position: relative;
+    margin-top: 100px;
+    width: 80%;
+    height: calc(100% - 100px);
+}
+.tutorial .right h2
+{
+    font-size: 45px;
+    font-weight: bolder;
+    font-style: italic;
+    color: #3D4041;
+}
+.tutorial .right h3
+{
+    margin: 0;
+    font-size: 25px;
+    font-weight: normal;
+    color: #5A5D5F;
+}
+.tutorial .right p
+{
+    margin: 0;
+    font-size: 20px;
+    color: #5A5D5F;
+    font-family: Myriad Pro Condensed;
+}
+.tutorial .right p a
+{
+    color: #92B8E3;
+}
+.tutorial .right .buttons
+{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+}
+.tutorial .right .buttons button
+{
+    border: 0;
+    background-color: #92B8E3;
+    color: #D1D7DE;
+    width: 150px;
+    height: 40px;
+    box-shadow: 2px 2px 3px 1px #7E9EC2;
+    font-size: 18px;
+    font-weight: bolder;
+    transition: .1s;
+}
+.tutorial .right .buttons button:hover { background-color: #78a4d6; }
+.tutorial .right .buttons button:active 
+{ 
+    box-shadow: none; 
+    transform: translate(2px, 2px);
+}
+.tutorial .count 
+{ 
+    margin: 0;
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    font-size: 25px;
+    font-weight: bolder;
+    color: #A6A6A6;
+}
+
+/* HEADER */
+header
+{
+    position: relative;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background: linear-gradient(to right, #232526, #414345);
+}
+
+/* HEADER H1 */
+header a
+{
+    position: relative;
+    text-align: center;
+    width: 350px;
+    padding: 25px;
+    font-family: Myriad Pro;
+    font-weight: bolder;
+    text-decoration: none;
+    font-size: 50px;
+    color: #D1D7DE;
+}
+header a::after
+{
+    content: '';
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 170px;
+    height: 2px;
+    background-color: #D1D7DE;
+}
+
+header .options .iconFix
+{
+    cursor: pointer;
+}
+header .options .iconFix i
+{
+    display: none;
+    transition: .2s;
+}
+header .options .iconFix:hover i
+{
+    color: #c4cbd4;
+    transform: rotate(180deg);
+}
+/* HEADER FORM */
+header form
+{
+    display: grid;
+    grid-template-columns: auto auto;
+    transition: top .2s, opacity .2s;
+}
+header form > div, header form > input 
+{ 
+    margin: 10px 20px;  
+    align-self: center;
+}
+header form label
+{
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    color: #D1D7DE;
+    font-style: italic;
+}
+header form select
+{
+    border: 0;
+    text-align: center;
+    font-weight: bolder;
+    width: 250px;
+    height: 40px;
+    color: #7A8591;
+    background-color: #D1D7DE;
+}
+header form input[type=submit]
+{ 
+    margin: auto;
+    margin-bottom: 15px;
+    border: 0;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bolder;
+    width: 200px;
+    height: 40px;
+    color: #D1D7DE;
+    background-color: #7A8591;
+    box-shadow: 0 6px 0 0 #40464D;
+    cursor: pointer;
+}
+header form input[type=submit]:hover {  background-color: #6d7783; }
+header form input[type=submit]:active
+{ 
+    transform: translateY(3px);
+    box-shadow: 0 3px 0 0 #40464D;
+}
+/* HEADER FORM SLIDER*/
+header form .slider { position: relative; }
+header form .slider input[type=range]
+{
+    -webkit-appearance: none;
+    width: 240px;
+    height: 18px;
+    background-color: #D1D7DE;
+    outline: none;
+    border-radius: 15px;
+    overflow: hidden;
+}
+header form .slider input[type=range]::-webkit-slider-thumb 
+{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #7A8591;
+    box-shadow: -320px 0 0 320px #7A8591, 0 0 0 3px #7A8591;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    transition: .1s;
+}
+header form .slider input[type=range]:active::-webkit-slider-thumb 
+{
+    position: relative;
+    background: #D1D7DE;
+    box-shadow: -320px 0 0 320px #7A8591, 0 0 0 3px #7A8591;
+    transition: .1s;
+}
+
+header form .slider .rangeInformation
+{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: -5px;
+    padding: 5px 8px;
+    font-weight: bolder;
+    background-color: #7A8591;
+    color: #D1D7DE;
+    border-radius: 5px;
+}
+header form .slider input[type=range]:active ~ .rangeInformation { display: block; }
+header form .slider input[type=range]::-moz-range-thumb 
+{
+    -webkit-appearance: none;
+    appearance: none;
+    border: 0;
+    width: 15px;
+    height: 15px;
+    background: #7A8591;
+    box-shadow: -320px 0 0 320px #7A8591, 0 0 0 3px #7A8591;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    transition: .1s;
+}
+header form .slider input[type=range]:active::-moz-range-thumb 
+{
+    background: #D1D7DE;
+    box-shadow: -320px 0 0 320px #7A8591, 0 0 0 3px #7A8591;
+    transition: .1s;
+}
+/* HEADER CUSTOM SECTION */
+header .customSection section
+{
+    position: relative;
+    width: 300px;
+    cursor: pointer;
+}
+header .customSection section h3
+{
+    margin: 0;
+    padding: 12px 0 8px 10px;
+    background-color: #d1d7de1a;
+    border-bottom: 1px solid #D1D7DE;
+    font-weight: 600;
+    font-size: 16.5px;
+    color: #D1D7DE;
+}
+header .customSection section ul
+{
+    position: absolute;
+    z-index: 5;
+    padding: 0;
+    width: 100%;
+    list-style-type: none;
+    background-color: #D1D7DE;
+    transition: top .2s, opacity .2s;
+}
+header .customSection section .closed
+{
+    transform: translateY(-500px);
+    top: 15px;
+    opacity: 0;
+    transition: top .2s, opacity .2s, transform 0s .2s;
+}
+header .customSection section .opened
+{
+    transform: translateY(0);
+    top: 25px;
+    opacity: 1;
+}
+header .customSection section ul li input { display: none; }
+header .customSection section ul li label
+{
+    margin: 0;
+    padding: 10px;
+    text-align: left;
+    font-style: normal;
+    color: #6f7a85;
+    transition: .2s;
+}
+header .customSection section ul li label:hover
+{
+    background-color: #b5bfc9;
+}
+
+/* HEADER KEYS */
+header .keys
+{
+    color: #D1D7DE;
+}
+header .keys p
+{
+    position: relative;
+    margin: 5px;
+    font-size: 18px;
+}
+header .keys p::before
+{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -25px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: #92B8E3;
+}
+
+main
+{
+    position: relative;
+}
+/* MAIN BLOCK CONTAINER */
+main .container
+{
+    display: flex;
+    justify-content: center;
+    height: 500px;
+}
+
+/* MAIN BLOCKS */
+main .container div
+{
+    width: 20px;
+    border: .5px solid #D1D7DE;
+    border-top: 0;
+    background-color: #92B8E3;
+}
+main .container .checking, header .keys p:nth-child(2)::before { background-color: #4F96E8; }
+main .container .saved, header .keys p:nth-child(3)::before { background-color: #E3D486; }
+main .container .checked, header .keys p:nth-child(4)::before { background-color: #94E386; }
+
+@media screen and (max-width: 1365px)
+{
+    header form
+    {
+        height: 300px;
+        position: absolute;
+        transform: translateY(0);
+        opacity: 1;
+        top: 100%;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        background: linear-gradient(to right, #232526, #414345);
+        display: flex;
+        flex-direction: column;
+        border-radius: 0 0 10% 10%;
+    }
+    header form div
+    {
+        position: relative;
+    }
+    header form div::before
+    {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 1px;
+        width: 95vw;
+        border-top: 2px solid #D1D7DE;
+    }
+    header .formClosed
+    {
+        transform: translateY(-5000px);
+        top: 90%;
+        opacity: 0;
+        transition: top .2s, opacity .2s, transform 0s .2s;
+    }
+    header .options .iconFix i
+    {
+        display: block;
+        font-size: 120px;
+        margin: 25px;
+        transform: rotate(90deg);
+        transform-origin: bottom top;
+        color: #D1D7DE;
+    }
+}
+@media screen and (max-width: 920px)
+{
+    .tutorial
+    {
+        display: block;
+        width: 80vw;
+    }
+    .tutorial .left
+    {
+        display: none;
+    }
+    .tutorial .right
+    {
+        margin: auto;
+        position: relative;
+        margin-top: 50px;
+        width: 90%;
+        height: calc(100% - 100px);
+    }
+    .tutorial .right h2
+    {
+        font-size: calc(20px + 5vw);
+    }
+    .tutorial .right .buttons
+    {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 100px;
+    }
+    .tutorial .right .buttons button
+    {
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 870px)
+{
+    main .container
+    {
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: rotate(90deg) translateY(-50%);
+        transform-origin: left top;
+        max-width: 200vh;
+        max-height: 90vw;
+    }
+    header a
+    {
+        font-size: 40px;
+    }
+    header .keys p
+    {
+        position: relative;
+        margin: 5px;
+        font-size: 14px;
+    }
+}
