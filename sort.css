@@ -316,7 +316,7 @@ header .customSection section ul
 }
 header .customSection section .closed
 {
-    transform: translateY(-500px);
+    transform: translateY(-900px);
     top: 15px;
     opacity: 0;
     transition: top .2s, opacity .2s, transform 0s .2s;
@@ -438,7 +438,7 @@ main .container .checked, header .keys p:nth-child(4)::before { background-color
         color: #D1D7DE;
     }
 }
-@media screen and (max-width: 920px)
+@media screen and (max-width: 950px)
 {
     .tutorial
     {
@@ -466,6 +466,7 @@ main .container .checked, header .keys p:nth-child(4)::before { background-color
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+        bottom: -10px;
         height: 100px;
     }
     .tutorial .right .buttons button

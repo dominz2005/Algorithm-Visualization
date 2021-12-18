@@ -716,7 +716,7 @@ main .container .path::after
     header form > input[type=button] { order: 2; }
     .buttons { order: 5; }
 }
-@media screen and (max-width: 920px)
+@media screen and (max-width: 950px)
 {
     .tutorial
     {
@@ -744,6 +744,7 @@ main .container .path::after
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+        bottom: -10px;
         height: 100px;
     }
     .tutorial .right .tButtons button
